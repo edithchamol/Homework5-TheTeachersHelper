@@ -1,29 +1,30 @@
-# Grading Tool for Teachers
+# Grading Tool for Teachers (Refactored for Testing)
 
-## Description
-This project is a Grading Tool designed for teachers to calculate and store final grades for students based on the provided rubric. Teachers can input grades for homework, quizzes, a midterm, and a final project. The tool calculates the final grade and stores all data in a database.
+## Purpose
+This branch contains the refactored version of Homework #5 for Homework #6. The code has been modularized to make it easier to test using PHPUnit.
 
-## Setup Instructions
-1. Import the `TheTeachersHelper.sql` file into your MySQL database.
-2. Ensure the database name is `grading_system` and it includes the `students` and `grades` tables.
-3. Place the `index.php` file in your local server's `htdocs` directory.
-4. Open your browser and navigate to `http://localhost/Homework5/`.
+## Changes Made
+- Refactored `index.php` to separate backend logic into `functions.php`.
+- Added the `calculateFinalGrade` function for grade calculation.
+- Added functions for database interactions:
+  - `insertGrades`
+  - `getStudents`
+  - `getGrades`
+- Implemented the Post/Redirect/Get (PRG) pattern to prevent duplicate submissions.
 
-## Usage
-1. Select a student from the dropdown menu.
-2. Input grades for homework, quizzes, midterm, and final project.
-3. Click "Submit Grades" to calculate and store the final grade.
-4. View all final grades in the table displayed below the form.
+## Files
+- `index.php`: Main frontend for grade entry and display.
+- `functions.php`: Contains backend functions for calculations and database interactions.
+- `TheTeachersHelper.sql`: SQL file to set up the database.
 
-## Features
-- Preloaded student names in the database.
-- Drop the lowest quiz score before averaging.
-- Weighted grading system:
-  - Homework: 20%
-  - Quizzes: 10% (lowest score dropped)
-  - Midterm: 30%
-  - Final Project: 40%
-- Persistent grade storage in the database.
+## Instructions
+1. Import `TheTeachersHelper.sql` into your MySQL database.
+2. Place `index.php` and `functions.php` in your local server’s `htdocs` directory.
+3. Access the tool via `http://localhost/`.
+
+## Notes
+This branch is ready for unit testing.
+
 
 ## Contact
 Creator : Edith Chamol
